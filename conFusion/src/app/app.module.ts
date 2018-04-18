@@ -4,16 +4,27 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
+// week1 delete
+// import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+// week1 add
+import { AboutPage } from '../pages/about/about';
+import { MenuPage } from '../pages/menu/menu';
+import { ContactPage } from '../pages/contact/contact';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    // ListPage, delete cause import was too
+//week1
+    AboutPage,  
+    MenuPage,   
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +34,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    // week1
+    AboutPage,
+    MenuPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
