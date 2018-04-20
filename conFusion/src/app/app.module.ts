@@ -4,6 +4,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+// week1 add
+import { AboutPage } from '../pages/about/about';
+import { MenuPage } from '../pages/menu/menu';
+import { ContactPage } from '../pages/contact/contact';
+import { DishdetailPage } from '../pages/dishdetail/dishdetail';
+
+
 
 // week1 delete
 // import { ListPage } from '../pages/list/list';
@@ -11,16 +18,15 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// week1 add
-import { AboutPage } from '../pages/about/about';
-import { MenuPage } from '../pages/menu/menu';
-import { ContactPage } from '../pages/contact/contact';
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
+
+
 import { HttpModule } from '@angular/http';
 import { baseURL } from '../shared/baseurl';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +35,8 @@ import { baseURL } from '../shared/baseurl';
 //week1
     AboutPage,  
     MenuPage,   
-    ContactPage
+    ContactPage,
+    DishdetailPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,8 @@ import { baseURL } from '../shared/baseurl';
     // week1
     AboutPage,
     MenuPage,
-    ContactPage
+    ContactPage,
+    DishdetailPage
   ],
   providers: [
     StatusBar,
