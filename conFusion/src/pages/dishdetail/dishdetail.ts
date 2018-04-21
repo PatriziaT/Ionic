@@ -27,11 +27,11 @@ export class DishdetailPage {
       this.numcomments = this.dish.comments.length;
       let total = 0;
       this.dish.comments.forEach(comment => total += comment.rating );
-      this.avgstars = (total/this.numcomments).toFixed(2); {
+      this.avgstars = (total/this.numcomments).toFixed(2);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DishdetailPage');
   }
 
-}}
+}
