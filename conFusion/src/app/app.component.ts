@@ -13,6 +13,8 @@ import { AboutPage } from '../pages/about/about';
 import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
 
+// week2
+import { FavoritesPage } from '../pages/favorites/favorites';
 
 @Component({
   templateUrl: 'app.html'
@@ -36,6 +38,8 @@ export class MyApp {
       { title: 'About Us', icon: 'information-circle', component: AboutPage },
       { title: 'Menu', icon: 'list-box', component: MenuPage },
       { title: 'Contact Us', icon: 'contact', component: ContactPage },
+      //week2
+      { title: 'Favorites', icon: 'heart', component: FavoritesPage },
     ];
 
   }

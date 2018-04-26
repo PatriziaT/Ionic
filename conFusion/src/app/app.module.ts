@@ -10,6 +10,8 @@ import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
 import { DishdetailPage } from '../pages/dishdetail/dishdetail';
 
+// week2
+import { FavoritesPage } from '../pages/favorites/favorites';
 
 
 // week1 delete
@@ -37,7 +39,9 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     AboutPage,  
     MenuPage,   
     ContactPage,
-    DishdetailPage
+    DishdetailPage,
+// week2
+    FavoritesPage
   ],
   imports: [
     BrowserModule,
@@ -48,12 +52,13 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
   entryComponents: [
     MyApp,
     HomePage,
-    
-    // week1
+// week1
     AboutPage,
     MenuPage,
     ContactPage,
-    DishdetailPage
+    DishdetailPage,
+//week2
+    FavoritesPage
   ],
   providers: [
     StatusBar,
