@@ -15,6 +15,10 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { CommentsPage } from '../pages/comments/comments';
 
+//week3
+import { LoginPage } from '../pages/login/login';
+import { IonicStorageModule } from '@ionic/storage';
+
 // week1 delete
 // import { ListPage } from '../pages/list/list';
 
@@ -44,12 +48,15 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
 // week2
     FavoritesPage,
     ReservationPage,
-    CommentsPage
+    CommentsPage,
+//week3
+LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,7 +70,9 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
 //week2
     FavoritesPage,
     ReservationPage,
-    CommentsPage
+    CommentsPage,
+ //week3
+    LoginPage   
   ],
   providers: [
     StatusBar,

@@ -21,6 +21,9 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
 import { CommentsPage } from '../pages/comments/comments';
 
+//week3
+import { LoginPage } from '../pages/login/login';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -57,6 +60,7 @@ export class MyApp {
         let modal = this.modalCtrl.create(ReservationPage);
         modal.present();
       }
+      
   initializeApp() {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -70,5 +74,11 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  // week3
+  openLogin() {
+    let modal = this.modalCtrl.create(LoginPage);
+    modal.present();
   }
 }
