@@ -1,3 +1,6 @@
+
+//this is for the app menu 
+
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,6 +19,7 @@ import { ContactPage } from '../pages/contact/contact';
 // week2
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
+import { CommentsPage } from '../pages/comments/comments';
 
 @Component({
   templateUrl: 'app.html'

@@ -13,7 +13,7 @@ import { DishdetailPage } from '../pages/dishdetail/dishdetail';
 // week2
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
-
+import { CommentsPage } from '../pages/comments/comments';
 
 // week1 delete
 // import { ListPage } from '../pages/list/list';
@@ -43,7 +43,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     DishdetailPage,
 // week2
     FavoritesPage,
-    ReservationPage
+    ReservationPage,
+    CommentsPage
   ],
   imports: [
     BrowserModule,
@@ -61,18 +62,20 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     DishdetailPage,
 //week2
     FavoritesPage,
-    ReservationPage
+    ReservationPage,
+    CommentsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler},
     DishProvider,
     LeaderProvider,
     PromotionProvider,
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
-    FavoriteProvider
+    FavoriteProvider,
+    
   ]
 })
 export class AppModule {}

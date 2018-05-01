@@ -1,9 +1,15 @@
 import { Component, Inject } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, ModalController, ActionSheetController } from 'ionic-angular';
 import { Dish } from '../../shared/dish';
 import { Comment } from '../../shared/comment';
 
 import { FavoriteProvider } from '../../providers/favorite/favorite';
+
+//import { ActionSheetController } from 'ionic-angular'
+import { CommentsPage } from '../comments/comments';
+
+
+
 /**
  * Generated class for the DishdetailPage page.
  *
@@ -22,11 +28,16 @@ export class DishdetailPage {
   avgstars: string;
   numcomments: number;
   favorite: boolean;
+  actionSheet: boolean;
+  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
     @Inject('BaseURL') private BaseURL,
     private favoriteservice: FavoriteProvider,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController,
+    public actionSheetCtrl: ActionSheetController,
+    public modalCtrl: ModalController) {
 
       this.dish = navParams.get('dish');
       this.favorite = favoriteservice.isFavorite(this.dish.id);
@@ -38,7 +49,10 @@ export class DishdetailPage {
         message: 'Dish ' + this.dish.id + ' added as favorite successfully',
         position: 'middle',
         duration: 3000}).present();
+    
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DishdetailPage');
@@ -48,4 +62,42 @@ export class DishdetailPage {
     console.log('Adding to Favorites', this.dish.id);
     this.favorite = this.favoriteservice.addFavorite(this.dish.id);
   }
-}
+
+  openComments() {
+    let modal = this.modalCtrl.create(CommentsPage);
+    modal.onDidDismiss((Comment) => {this.dish.comments.push (Comment)} )
+    modal.present();
+  }
+
+  presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Select Actions',
+      buttons: [
+        {
+          text: 'Add to Favorite',
+          handler: () => {
+            console.log('Add to Favorite clicked');
+          }
+        },
+        {
+          text: 'Add to Comment',
+          handler: () => {
+            this.openComments();
+            console.log('Comment clicked');
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+ 
+    actionSheet.present();
+    
+  }
+ }
+

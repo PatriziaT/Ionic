@@ -1,0 +1,39 @@
+<!--
+  Generated template for the CommentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Comments</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   
+
+      <form [formGroup]="comments" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label>Author </ion-label>
+            <ion-input formControlName="author" placeholder="Your Name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            
+              <ion-label>Rating </ion-label>
+              <ion-label>{{star}} </ion-label>
+            
+            <ion-range formControlName="rating" min="20" max="80" step="2" [(ngModel)]="star">
+              <ion-icon range-left small name="star"></ion-icon>
+              <ion-icon range-right name="star"></ion-icon>
+            </ion-range>
+
+            <!-- add text area  -->
+          </ion-item>
+          <button ion-button type="submit" [disabled]="!comments.valid">Comment</button>
+        </form>
+</ion-content>
