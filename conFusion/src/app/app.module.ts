@@ -25,6 +25,7 @@ import { RegisterPage } from '../pages/register/register';
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { SocialSharing } from '@ionic-native/social-sharing';
 // import { CallNumber } from '@ionic-native/call-number';
 // import { Camera } from '@ionic-native/camera';
 
@@ -100,6 +101,7 @@ RegisterPage
     // Network,
     LocalNotifications,
     EmailComposer,
+    SocialSharing
     // CallNumber,
     // Camera
   ]
