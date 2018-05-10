@@ -21,7 +21,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { RegisterPage } from '../pages/register/register';
 
 // week4
-// import { Network } from '@ionic-native/network';
+import { Network } from '@ionic-native/network';
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { EmailComposer } from '@ionic-native/email-composer';
@@ -98,10 +98,10 @@ RegisterPage
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
     FavoriteProvider,
-    // Network,
+    Network,
     LocalNotifications,
     EmailComposer,
-    SocialSharing
+    SocialSharing,
     // CallNumber,
     Camera
   ]
