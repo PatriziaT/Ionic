@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-// import { Camera, CameraOptions } from '@ionic-native/camera';
+
+//week4
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 
 /**
@@ -24,7 +26,7 @@ export class RegisterPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private viewCtrl: ViewController,
-    // private camera: Camera,
+    private camera: Camera,
     private formBuilder: FormBuilder) {
   
       this.registerForm = this.formBuilder.group({
@@ -44,54 +46,31 @@ export class RegisterPage {
     dismiss() {
     this.viewCtrl.dismiss(true);
   }
-  getFromLibrary() {
-      
-      // var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
-    //   const options: CameraOptions = {
-    //       quality: 100,
-    //       targetHeight: 100,
-    //       targetWidth: 100,
-    //       correctOrientation: true,
-    //       allowEdit: true,
-    //       destinationType: this.camera.DestinationType.FILE_URI,
-    //       encodingType: this.camera.EncodingType.PNG
-    //     }
-    
-    //     this.camera.getPicture(options).then ((imageUri) => {
-    //       this.image = imageUri;
-    //     }, (err) => {
-    //         console.debug("Unable to obtain picture: " + err, "app");
-    
-    //     }, options);
-    //   }
-    // }
-    // getPicture() {
-    //   const options: CameraOptions = {
-    //     quality: 100,
-    //     targetHeight: 100,
-    //     targetWidth: 100,
-    //     correctOrientation: true,
-    //     allowEdit: true,
-    //     destinationType: this.camera.DestinationType.FILE_URI,
-    //     encodingType: this.camera.EncodingType.PNG,
-    //     mediaType: this.camera.MediaType.PICTURE,
-    //     cameraDirection: this.camera.Direction.FRONT
-    //   }
-  
-    //   this.camera.getPicture(options).then((imageData) => {
-  
-    //     this.image = imageData;
-    //     console.log(imageData);
-    //   }, (err) => {
-    //       console.log('Error obtaining picture')
-    //     });
-    //   }
-    
-    //   onSubmit() {
-    //     console.log(this.registerForm.value);
-    //     this.dismiss();
-    //   }
-  
-  }}
-    
+  getPicture() {
+    const options: CameraOptions = {
+      quality: 100,
+      targetHeight: 100,
+      targetWidth: 100,
+      correctOrientation: true,
+      allowEdit: true,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.PNG,
+      mediaType: this.camera.MediaType.PICTURE,
+      cameraDirection: this.camera.Direction.FRONT
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+
+      this.image = imageData;
+      console.log(imageData);
+    }, (err) => {
+        console.log('Error obtaining picture')
+    });
+  }
+
+  onSubmit() {
+    console.log(this.registerForm.value);
+    this.dismiss();
+  }
+}
  

@@ -27,7 +27,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { SocialSharing } from '@ionic-native/social-sharing';
 // import { CallNumber } from '@ionic-native/call-number';
-// import { Camera } from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
 
 
 
@@ -103,7 +103,7 @@ RegisterPage
     EmailComposer,
     SocialSharing
     // CallNumber,
-    // Camera
+    Camera
   ]
 })
 export class AppModule {}
