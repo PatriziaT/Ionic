@@ -18,6 +18,15 @@ import { CommentsPage } from '../pages/comments/comments';
 //week3
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
+import { RegisterPage } from '../pages/register/register';
+// import { Network } from '@ionic-native/network';
+
+import { LocalNotifications } from '@ionic-native/local-notifications';
+// import { EmailComposer } from '@ionic-native/email-composer';
+// import { CallNumber } from '@ionic-native/call-number';
+// import { Camera } from '@ionic-native/camera';
+
+
 
 // week1 delete
 // import { ListPage } from '../pages/list/list';
@@ -50,7 +59,8 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ReservationPage,
     CommentsPage,
 //week3
-LoginPage
+LoginPage,
+RegisterPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +82,8 @@ LoginPage
     ReservationPage,
     CommentsPage,
  //week3
-    LoginPage   
+    LoginPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
@@ -84,7 +95,11 @@ LoginPage
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
     FavoriteProvider,
-    
+    // Network,
+    LocalNotifications,
+    // EmailComposer,
+    // CallNumber,
+    // Camera
   ]
 })
 export class AppModule {}

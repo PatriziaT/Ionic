@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams, ItemSliding, ToastController, Load
 
 import { FavoriteProvider } from '../../providers/favorite/favorite';
 import { Dish } from '../../shared/dish';
+
+//week4
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 /**
  * Generated class for the FavoritesPage page.
  *
@@ -26,7 +30,8 @@ export class FavoritesPage implements OnInit {
     @Inject('BaseURL') private BaseURL,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private alertCtrl: AlertController) {
+    private alertCtrl: AlertController,
+    private localNotifications: LocalNotifications) {
     }
 
   ngOnInit() {
@@ -66,7 +71,13 @@ export class FavoritesPage implements OnInit {
             this.favoriteservice.deleteFavorite(id)
               .subscribe(favorites => {this.favorites = favorites; loading.dismiss(); toast.present(); } ,
                 errmess =>{ this.errMess = errmess; loading.dismiss(); });
-          }
+           // Schedule a single notification
+            this.localNotifications.schedule({
+      id: id,
+      text: 'Dish ' + id + ' added as a favorite successfully'
+    });
+    
+              }
         }
       ]
     });
