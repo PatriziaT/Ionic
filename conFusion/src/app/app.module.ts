@@ -19,10 +19,12 @@ import { CommentsPage } from '../pages/comments/comments';
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 import { RegisterPage } from '../pages/register/register';
+
+// week4
 // import { Network } from '@ionic-native/network';
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
-// import { EmailComposer } from '@ionic-native/email-composer';
+import { EmailComposer } from '@ionic-native/email-composer';
 // import { CallNumber } from '@ionic-native/call-number';
 // import { Camera } from '@ionic-native/camera';
 
@@ -97,7 +99,7 @@ RegisterPage
     FavoriteProvider,
     // Network,
     LocalNotifications,
-    // EmailComposer,
+    EmailComposer,
     // CallNumber,
     // Camera
   ]
